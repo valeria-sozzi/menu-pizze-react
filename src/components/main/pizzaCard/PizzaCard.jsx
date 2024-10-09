@@ -1,5 +1,6 @@
 import React from "react";
 import "./PizzaCard.scss";
+import { Link } from "react-router-dom";
 
 const PizzaCard = ({ pizza }) => {
   return (
@@ -7,9 +8,11 @@ const PizzaCard = ({ pizza }) => {
       <div className="image">
         <img src={pizza.img} />
       </div>
-      <h3>{pizza.name}</h3>
+      <h2>{pizza.name}</h2>
       <p>€ {pizza.price}</p>
-      <button>Dettagli</button>
+      <Link to={"/dettagli"} state={{ pizza: pizza }} className="link">
+        Dettagli
+      </Link>
     </div>
   );
 };

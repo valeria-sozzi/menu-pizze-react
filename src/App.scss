@@ -1,5 +1,10 @@
-body{
-    span {
-        background-color: aliceblue;
-    }
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_23-2148698592.jpg');
+    background-size: cover;
+    padding: 2rem;
+   
+    
 }

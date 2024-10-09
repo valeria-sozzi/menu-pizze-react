@@ -1,0 +1,27 @@
+.menu-container{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .col{
+        width: 47%;
+    }
+    .image{
+        height: 400px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .details{
+        color: bisque;
+        font-size: 1.8rem;
+        .link{
+            color: bisque;
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+    }
+}
+   
+    

@@ -1,6 +1,10 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/header/Header";
-import Main from "./components/main/Main";
+import PizzaDetails from "./components/main/pizzaDetails/PizzaDetails";
+import { useState } from "react";
+import MenuPizza from "./components/main/menuPizza/MenuPizza";
+import InputForm from "./components/main/inputForm/inputForm";
 
 function App() {
   const pizzas = [
@@ -47,11 +51,44 @@ function App() {
       img: "https://www.ricettedalmondo.it/images/foto-ricette/p/31389-pizza-con-fiori-di-zucca-e-alici.jpg",
     },
   ];
+  const [pizzaValue, setPizzaValue] = useState("");
   return (
-    <>
-      <Header />
-      <Main pizzas={pizzas} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <main className="card-container">
+                <InputForm
+                  pizzaValue={pizzaValue}
+                  setPizzaValue={setPizzaValue}
+                />
+
+                <MenuPizza pizzas={pizzas} pizzaValue={pizzaValue} />
+              </main>
+            </>
+          }
+        />
+        <Route
+          path="/dettagli"
+          element={
+            <>
+              <Header />
+              <main className="card-container">
+                <InputForm
+                  pizzaValue={pizzaValue}
+                  setPizzaValue={setPizzaValue}
+                />
+
+                <PizzaDetails />
+              </main>
+            </>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
