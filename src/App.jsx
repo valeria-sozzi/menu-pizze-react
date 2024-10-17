@@ -2,9 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/header/Header";
 import PizzaDetails from "./components/main/pizzaDetails/PizzaDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuPizza from "./components/main/menuPizza/MenuPizza";
 import InputForm from "./components/main/inputForm/inputForm";
+import Carrello from "./components/main/carrello/Carrello";
 
 function App() {
   const pizzas = [
@@ -52,6 +53,12 @@ function App() {
     },
   ];
   const [pizzaValue, setPizzaValue] = useState("");
+  const [cartElements, setCartElements] = useState([]);
+
+  useEffect(() => {
+    console.log("🚀 ~ App ~ cartElements:", cartElements);
+  }, [cartElements]);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -61,12 +68,20 @@ function App() {
             <>
               <Header />
               <main className="card-container">
-                <InputForm
-                  pizzaValue={pizzaValue}
-                  setPizzaValue={setPizzaValue}
-                />
+                <div className="col-left">
+                  <InputForm
+                    pizzaValue={pizzaValue}
+                    setPizzaValue={setPizzaValue}
+                  />
+                  <Carrello cartElements={cartElements} />
+                </div>
 
-                <MenuPizza pizzas={pizzas} pizzaValue={pizzaValue} />
+                <MenuPizza
+                  pizzas={pizzas}
+                  pizzaValue={pizzaValue}
+                  setCartElements={setCartElements}
+                  cartElements={cartElements}
+                />
               </main>
             </>
           }
@@ -77,12 +92,18 @@ function App() {
             <>
               <Header />
               <main className="card-container">
-                <InputForm
-                  pizzaValue={pizzaValue}
-                  setPizzaValue={setPizzaValue}
-                />
+                <div className="col-left">
+                  <InputForm
+                    pizzaValue={pizzaValue}
+                    setPizzaValue={setPizzaValue}
+                  />
+                  <Carrello cartElements={cartElements} />
+                </div>
 
-                <PizzaDetails />
+                <PizzaDetails
+                  setCartElements={setCartElements}
+                  cartElements={cartElements}
+                />
               </main>
             </>
           }

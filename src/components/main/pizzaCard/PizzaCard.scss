@@ -1,4 +1,4 @@
-.card{
+.card-pizza{
     height: 400px;
     width: 300px;
     border: 1px solid gray;
@@ -14,18 +14,32 @@
             border-radius: 15px;
         }
     }
-    
-    button{
-        background-color: bisque;
-        color: rgb(40, 36, 36);
-        border-radius: 35px;
-        padding: 5px 25px;
+    .details-pizza{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        p{
+            font-size: 1.3rem;
+        }
+        .info-pizza{
+            display: flex;
+            justify-content: space-evenly;
+            button{
+                border: 1px solid bisque;
+                background-color: transparent;
+                border-radius: 35px;
+                padding: 5px 25px;
+            }
+            .link{
+                color: bisque;
+                font-weight: 800;
+                font-size: 1.2rem;
+                margin-left: 50px;
+            }
+        
+        }
     }
 
-    .link{
-        color: bisque;
-        font-weight: 800;
-        font-size: 1.2rem;
-    }
+    
 }
 

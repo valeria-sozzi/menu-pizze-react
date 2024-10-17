@@ -16,10 +16,27 @@
     .details{
         color: bisque;
         font-size: 1.8rem;
-        .link{
-            color: bisque;
-            font-weight: 800;
-            font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        .info{
+            display: flex;
+            
+            button{
+                border: 1px solid bisque;
+                background-color: transparent;
+                border-radius: 35px;
+                padding:1px 25px 3px;
+                margin-right: 30px;
+            }
+            .link{
+                color: bisque;
+                font-weight: 800;
+                font-size: 1.4rem;
+                .cart-logo{
+                    padding-right: 10px;
+                }
+            }
         }
     }
 }
