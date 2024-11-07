@@ -1,0 +1,20 @@
+.main-container{
+    background-color: black;
+    display: flex;
+    height:  70vh;
+    padding: 2rem 0.7rem;
+    column-gap: 3rem;
+    .col-left{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    .col-right{
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+}

@@ -1,0 +1,30 @@
+.mainContact-container{
+    height: 70vh;
+    background-color: black;
+    display: flex;
+    .image{
+        height: 100%;
+        width: 65%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+    .mainContact-text{
+        color: brown;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.5rem;
+        text-align: center;
+        font-weight: 800;
+       h1{
+        font-size: 2.8em;
+       }
+        a{
+            color: orange;
+        }
+    }
+}

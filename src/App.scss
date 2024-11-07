@@ -3,16 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.card-container{
-    display: flex;
-    justify-content: space-between;
-    background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_23-2148698592.jpg');
-    background-size: cover;
-    padding: 2rem;
 
-    .col-left{
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
-    }
+.page-container{
+    display: flex;
+    flex-direction: column;
 }
